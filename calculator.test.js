@@ -86,7 +86,7 @@ describe('divide', () => {
   test("Check that it can divide 2 floats", () => {
     const actual = divide(27.625, 3.25);
     const expected = 8.5;
-    expect(actual).toBe(expected);
+    expect(actual).toEqual(expected);
   });
   test("Check that it can divide 2 negative numbers", () => {
     const actual = divide(-490, -98);
@@ -116,8 +116,8 @@ describe('even', () => {
   });
   test("Check if 28371 is even", () => {
     const actual = even(28371);
-    const expected = false;
-    expect(actual).toBe(expected);
+    // const expected = false;
+    expect(actual).toBeFalsy;
   });
 
 });
@@ -130,8 +130,13 @@ describe('odd', () => {
   });
   test("Check if 13493 is odd", () => {
     const actual = odd(13493);
-    const expected = true;
-    expect(actual).toBe(expected);
+    // const expected = true;
+    expect(actual).toBeTruthy;
+  });
+  test("Check if 12 is odd", () => {
+    const actual = odd(12);
+    // const expected = false;
+    expect(actual).toBeNull;
   });
 
 });
